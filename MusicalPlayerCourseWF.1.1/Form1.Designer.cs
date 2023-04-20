@@ -132,7 +132,7 @@
             this.lbl_track_end.AutoSize = true;
             this.lbl_track_end.Font = new System.Drawing.Font("Old English Text MT", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_track_end.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbl_track_end.Location = new System.Drawing.Point(508, 6);
+            this.lbl_track_end.Location = new System.Drawing.Point(568, 6);
             this.lbl_track_end.Name = "lbl_track_end";
             this.lbl_track_end.Size = new System.Drawing.Size(95, 38);
             this.lbl_track_end.TabIndex = 14;
@@ -309,9 +309,9 @@
             this.btn_end.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_end.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_end.ForeColor = System.Drawing.Color.White;
-            this.btn_end.Location = new System.Drawing.Point(602, -1);
+            this.btn_end.Location = new System.Drawing.Point(0, 410);
             this.btn_end.Name = "btn_end";
-            this.btn_end.Size = new System.Drawing.Size(64, 45);
+            this.btn_end.Size = new System.Drawing.Size(44, 36);
             this.btn_end.TabIndex = 16;
             this.btn_end.Text = "X";
             this.btn_end.UseVisualStyleBackColor = false;
@@ -345,7 +345,6 @@
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Controls.Add(this.lbl_track_start);
             this.panel2.Controls.Add(this.lbl_track_end);
-            this.panel2.Controls.Add(this.btn_end);
             this.panel2.Controls.Add(this.lbl_name);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -360,6 +359,7 @@
             this.ClientSize = new System.Drawing.Size(666, 437);
             this.Controls.Add(this.track_list);
             this.Controls.Add(this.btn_open);
+            this.Controls.Add(this.btn_end);
             this.Controls.Add(this.btn_stop);
             this.Controls.Add(this.btn_next);
             this.Controls.Add(this.btn_pause);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -113,73 +114,11 @@ namespace MusicalPlayerCourseWF._1._1
 
         private void track_speed_Scroll(object sender, EventArgs e)
         {
-            switch(track_speed.Value)
-            {
-                case 1:
-           
-                player.settings.rate = 0.5;
-                lbl_speed.Text = "x 0.5";
-                    break;
-                case 2:
-            
-                player.settings.rate = 0.75;
-               lbl_speed.Text = "x 0.75";
-                    break;
-                case 3:
-            
-                player.settings.rate = 1.0;
-                lbl_speed.Text = "x 1";
-                    break;
-                case 4:
-            
-                player.settings.rate = 1.25;
-                lbl_speed.Text = "x 1.25";
-                    break;
-                case 5:
-            
-                player.settings.rate = 1.5;
-                lbl_speed.Text = "x 1.5";
-                    break;
-                case 6:
-            
-               player.settings.rate = 2.0;
-                lbl_speed.Text = "x 2";
-                    break;
-            }
-            #region if (debug)
-            //if (track_speed.Value == 1)
-            //{
-            //    player.settings.rate = 0.5;
-            //    lbl_speed.Text = "x 0.5";
-            //}
-            //if (track_speed.Value == 2)
-            //{
-            //    player.settings.rate = 0.75;
-            //    lbl_speed.Text = "x 0.75";
-            //}
-            //if (player.settings.rate == 3)
-            //{
-            //    player.settings.rate = 1.0;
-            //    lbl_speed.Text = "x 1";
-            //}
-            //if (track_speed.Value == 4)
-            //{
-            //    player.settings.rate = 1.25;
-            //    lbl_speed.Text = "x 1.25";
-            //}
-            //if (track_speed.Value == 5)
-            //{
-            //    player.settings.rate = 1.5;
-            //    lbl_speed.Text = "x 1.5";
-            //}
-            //if (track_speed.Value == 6)
-            //{
-            //    player.settings.rate = 2.0;
-            //    lbl_speed.Text = "x 2";
-            //}
-            //   player.settings.rate = track_speed.Value;
-            //   lbl_speed.Text = track_speed.Value.ToString() + "%";
-            #endregion
+            var speedDictionary = new Dictionary<int, double>() { { 1, 0.5 }, { 2, 0.75 }, { 3, 1}, { 4, 1.25}, { 5, 1.5}, { 6, 2.0} };
+
+            player.settings.rate = speedDictionary[track_speed.Value];
+            lbl_speed.Text = $"x {speedDictionary[track_speed.Value]}";
+
         }
 
 
@@ -200,3 +139,4 @@ namespace MusicalPlayerCourseWF._1._1
         }
     }
 }
+//TODO клас для констант
