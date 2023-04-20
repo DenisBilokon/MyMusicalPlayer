@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Net.Http.Headers;
 using System.Windows.Forms;
 
 namespace MusicalPlayerCourseWF._1._1
@@ -32,7 +33,7 @@ namespace MusicalPlayerCourseWF._1._1
             }
             catch
             {
-
+                Console.WriteLine("Помилка при відкритті файлу");
             }
         }
 
@@ -114,10 +115,8 @@ namespace MusicalPlayerCourseWF._1._1
 
         private void track_speed_Scroll(object sender, EventArgs e)
         {
-            var speedDictionary = new Dictionary<int, double>() { { 1, 0.5 }, { 2, 0.75 }, { 3, 1}, { 4, 1.25}, { 5, 1.5}, { 6, 2.0} };
-
-            player.settings.rate = speedDictionary[track_speed.Value];
-            lbl_speed.Text = $"x {speedDictionary[track_speed.Value]}";
+            var speedSlider = new SpeedSlider(player, lbl_speed);
+            speedSlider.SetSpeed(track_speed.Value);
 
         }
 
